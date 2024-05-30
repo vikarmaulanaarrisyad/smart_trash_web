@@ -15,6 +15,15 @@ class SampahController extends Controller
         return view('sampah.index');
     }
 
+    public function data()
+    {
+        $query = Sampah::orderBy('id', 'DESC');
+        return datatables($query)
+            ->addIndexColumn()
+            ->escapeColumns([])
+            ->make(true);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

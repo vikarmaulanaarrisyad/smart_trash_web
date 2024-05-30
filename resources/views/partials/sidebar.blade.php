@@ -1,9 +1,9 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
      <!-- Brand Logo -->
      <a href="index3.html" class="brand-link">
-         <img src="{{ asset('adminlte') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+         <img src="{{ Storage::url($setting->logo_aplikasi ?? '') }}" alt="Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-         <span class="brand-text font-weight-light">AdminLTE 3</span>
+         <span class="brand-text font-weight-light">{{ $setting->nama_aplikasi }}</span>
      </a>
 
      <!-- Sidebar -->
@@ -14,7 +14,7 @@
                      alt="User Image">
              </div>
              <div class="info">
-                 <a href="#" class="d-block">Alexander Pierce</a>
+                 <a href="#" class="d-block">{{ auth()->user()->name }}</a>
              </div>
          </div>
 
@@ -24,7 +24,7 @@
                  data-accordion="false">
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                 <li class="nav-item menu-open">
+                 <li class="nav-item">
                      <a href="{{ route('dashboard') }}" class="nav-link">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
@@ -34,7 +34,7 @@
                  </li>
                  <li class="nav-header">MONITORING</li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('sampah.index') }}" class="nav-link">
                          <i class="nav-icon fas fa-chart-line"></i>
                          <p>
                              Monitoring Sampah
@@ -42,7 +42,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('history.index') }}" class="nav-link">
                          <i class="nav-icon fas fa-history"></i>
                          <p>
                              Riwayat Data
