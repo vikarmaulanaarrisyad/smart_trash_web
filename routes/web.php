@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\SampahController;
 use App\Http\Controllers\SettingController;
@@ -12,6 +13,8 @@ Route::get('/', function () {
 
 Route::group(['midleware' => ['auth']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/data-monitoring', [GrafikController::class, 'getData'])->name('grafik.data');
+
     Route::get('/sampah/data', [SampahController::class, 'data'])->name('sampah.data');
     Route::resource('sampah', SampahController::class);
 
