@@ -35,7 +35,6 @@
             serverSide: true,
             ajax: {
                 url: '{{ route('sampah.data') }}',
-                dataSrc: '',
             },
             columns: [{
                     data: 'DT_RowIndex',
