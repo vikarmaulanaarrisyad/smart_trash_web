@@ -13,7 +13,8 @@ class ApiSampahController extends Controller
         $data = [
             'tanggal' => date('Y-m-d H:i:s'),
             'kapasitas' => $request->kapasitas,
-            'tinggi_sampah' => $request->tinggi_sampah
+            'tinggi_sampah' => $request->tinggi_sampah,
+            'status' => $request->status
         ];
 
         Sampah::create($data);
